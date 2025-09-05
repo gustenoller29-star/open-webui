@@ -31,6 +31,7 @@
 	import FilesOverlay from '../chat/MessageInput/FilesOverlay.svelte';
 	import Commands from '../chat/MessageInput/Commands.svelte';
 	import InputVariablesModal from '../chat/MessageInput/InputVariablesModal.svelte';
+	import LunarnoAiDiModal from '$lib/components/common/LunarnoAiDiModal.svelte';
 
 	export let placeholder = $i18n.t('Send a Message');
 
@@ -64,6 +65,9 @@
 	let showInputVariablesModal = false;
 	let inputVariables: Record<string, any> = {};
 	let inputVariableValues = {};
+
+	let showAiDiModal = false;
+	let aiDiId = '';
 
 	const inputVariableHandler = async (text: string) => {
 		inputVariables = extractInputVariables(text);
@@ -452,7 +456,22 @@
 		draggedOver = false;
 	};
 
-	const submitHandler = async () => {
+	const checkAiDiCommand = (message) => {
+		const prefix = '#*Koppla till AiDi**ID=';
+		if (message.startsWith(prefix)) {
+			aiDiId = message.slice(prefix.length).trim();
+			showAiDiModal = true;
+			return true;
+		}
+		return false;
+	};
+
+	const handleSendMessage = () => {
+		if (checkAiDiCommand(content)) {
+			// Do not send the message, just show modal
+			return;
+		}
+
 		if (content === '' && files.length === 0) {
 			return;
 		}
@@ -539,6 +558,8 @@
 		replaceVariables(inputVariableValues);
 	}}
 />
+
+<LunarnoAiDiModal show={showAiDiModal} aiDiId={aiDiId} on:close={() => (showAiDiModal = false)} />
 
 <div class="bg-transparent">
 	<div
@@ -630,7 +651,7 @@
 				<form
 					class="w-full flex gap-1.5"
 					on:submit|preventDefault={() => {
-						submitHandler();
+						handleSendMessage();
 					}}
 				>
 					<div
@@ -783,7 +804,7 @@
 
 												// Submit the content when Enter key is pressed
 												if (content !== '' && e.keyCode === 13 && !e.shiftKey) {
-													submitHandler();
+													handleSendMessage();
 												}
 											}
 										}
