@@ -11,16 +11,16 @@ from cryptography.hazmat.primitives import serialization
 
 import markdown
 from bs4 import BeautifulSoup
-from open_webui.constants import ERROR_MESSAGES
+from open_LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1.constants import ERROR_MESSAGES
 
 ####################################
 # Load .env file
 ####################################
 
-OPEN_WEBUI_DIR = Path(__file__).parent  # the path containing this file
-print(OPEN_WEBUI_DIR)
+OPEN_LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_DIR = Path(__file__).parent  # the path containing this file
+print(OPEN_LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_DIR)
 
-BACKEND_DIR = OPEN_WEBUI_DIR.parent  # the path containing this file
+BACKEND_DIR = OPEN_LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_DIR.parent  # the path containing this file
 BASE_DIR = BACKEND_DIR.parent  # the path containing the backend/
 
 print(BACKEND_DIR)
@@ -107,11 +107,11 @@ for source in log_sources:
 
 log.setLevel(SRC_LOG_LEVELS["CONFIG"])
 
-WEBUI_NAME = os.environ.get("WEBUI_NAME", "Open WebUI")
-if WEBUI_NAME != "Open WebUI":
-    WEBUI_NAME += " (Open WebUI)"
+LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_NAME = os.environ.get("LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_NAME", "Open LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1")
+if LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_NAME != "Open LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1":
+    LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_NAME += " (Open LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1)"
 
-WEBUI_FAVICON_URL = "https://openwebui.com/favicon.png"
+LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_FAVICON_URL = "https://openLunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1.com/favicon.png"
 
 TRUSTED_SIGNATURE_KEY = os.environ.get("TRUSTED_SIGNATURE_KEY", "")
 
@@ -124,7 +124,7 @@ ENV = os.environ.get("ENV", "dev")
 FROM_INIT_PY = os.environ.get("FROM_INIT_PY", "False").lower() == "true"
 
 if FROM_INIT_PY:
-    PACKAGE_DATA = {"version": importlib.metadata.version("open-webui")}
+    PACKAGE_DATA = {"version": importlib.metadata.version("open-LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1")}
 else:
     try:
         PACKAGE_DATA = json.loads((BASE_DIR / "package.json").read_text())
@@ -160,7 +160,7 @@ try:
         changelog_content = file.read()
 
 except Exception:
-    changelog_content = (pkgutil.get_data("open_webui", "CHANGELOG.md") or b"").decode()
+    changelog_content = (pkgutil.get_data("open_LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1", "CHANGELOG.md") or b"").decode()
 
 # Convert markdown content to HTML
 html_content = markdown.markdown(changelog_content)
@@ -210,10 +210,10 @@ ENABLE_FORWARD_USER_INFO_HEADERS = (
 )
 
 ####################################
-# WEBUI_BUILD_HASH
+# LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_BUILD_HASH
 ####################################
 
-WEBUI_BUILD_HASH = os.environ.get("WEBUI_BUILD_HASH", "dev-build")
+LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_BUILD_HASH = os.environ.get("LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_BUILD_HASH", "dev-build")
 
 ####################################
 # DATA/FRONTEND BUILD DIR
@@ -222,7 +222,7 @@ WEBUI_BUILD_HASH = os.environ.get("WEBUI_BUILD_HASH", "dev-build")
 DATA_DIR = Path(os.getenv("DATA_DIR", BACKEND_DIR / "data")).resolve()
 
 if FROM_INIT_PY:
-    NEW_DATA_DIR = Path(os.getenv("DATA_DIR", OPEN_WEBUI_DIR / "data")).resolve()
+    NEW_DATA_DIR = Path(os.getenv("DATA_DIR", OPEN_LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_DIR / "data")).resolve()
     NEW_DATA_DIR.mkdir(parents=True, exist_ok=True)
 
     # Check if the data directory exists in the package directory
@@ -236,22 +236,22 @@ if FROM_INIT_PY:
                 shutil.copy2(item, dest)
 
         # Zip the data directory
-        shutil.make_archive(DATA_DIR.parent / "open_webui_data", "zip", DATA_DIR)
+        shutil.make_archive(DATA_DIR.parent / "open_LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_data", "zip", DATA_DIR)
 
         # Remove the old data directory
         shutil.rmtree(DATA_DIR)
 
-    DATA_DIR = Path(os.getenv("DATA_DIR", OPEN_WEBUI_DIR / "data"))
+    DATA_DIR = Path(os.getenv("DATA_DIR", OPEN_LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_DIR / "data"))
 
-STATIC_DIR = Path(os.getenv("STATIC_DIR", OPEN_WEBUI_DIR / "static"))
+STATIC_DIR = Path(os.getenv("STATIC_DIR", OPEN_LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_DIR / "static"))
 
-FONTS_DIR = Path(os.getenv("FONTS_DIR", OPEN_WEBUI_DIR / "static" / "fonts"))
+FONTS_DIR = Path(os.getenv("FONTS_DIR", OPEN_LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_DIR / "static" / "fonts"))
 
 FRONTEND_BUILD_DIR = Path(os.getenv("FRONTEND_BUILD_DIR", BASE_DIR / "build")).resolve()
 
 if FROM_INIT_PY:
     FRONTEND_BUILD_DIR = Path(
-        os.getenv("FRONTEND_BUILD_DIR", OPEN_WEBUI_DIR / "frontend")
+        os.getenv("FRONTEND_BUILD_DIR", OPEN_LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_DIR / "frontend")
     ).resolve()
 
 ####################################
@@ -261,12 +261,12 @@ if FROM_INIT_PY:
 # Check if the file exists
 if os.path.exists(f"{DATA_DIR}/ollama.db"):
     # Rename the file
-    os.rename(f"{DATA_DIR}/ollama.db", f"{DATA_DIR}/webui.db")
-    log.info("Database migrated from Ollama-WebUI successfully.")
+    os.rename(f"{DATA_DIR}/ollama.db", f"{DATA_DIR}/LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1.db")
+    log.info("Database migrated from Ollama-LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1 successfully.")
 else:
     pass
 
-DATABASE_URL = os.environ.get("DATABASE_URL", f"sqlite:///{DATA_DIR}/webui.db")
+DATABASE_URL = os.environ.get("DATABASE_URL", f"sqlite:///{DATA_DIR}/LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1.db")
 
 DATABASE_TYPE = os.environ.get("DATABASE_TYPE")
 DATABASE_USER = os.environ.get("DATABASE_USER")
@@ -290,7 +290,7 @@ if all(DB_VARS.values()):
     DATABASE_URL = f"{DB_VARS['db_type']}://{DB_VARS['db_cred']}@{DB_VARS['db_host']}:{DB_VARS['db_port']}/{DB_VARS['db_name']}"
 elif DATABASE_TYPE == "sqlite+sqlcipher" and not os.environ.get("DATABASE_URL"):
     # Handle SQLCipher with local file when DATABASE_URL wasn't explicitly set
-    DATABASE_URL = f"sqlite+sqlcipher:///{DATA_DIR}/webui.db"
+    DATABASE_URL = f"sqlite+sqlcipher:///{DATA_DIR}/LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1.db"
 
 # Replace the postgres:// with postgresql://
 if "postgres://" in DATABASE_URL:
@@ -351,7 +351,7 @@ ENABLE_REALTIME_CHAT_SAVE = (
 REDIS_URL = os.environ.get("REDIS_URL", "")
 REDIS_CLUSTER = os.environ.get("REDIS_CLUSTER", "False").lower() == "true"
 
-REDIS_KEY_PREFIX = os.environ.get("REDIS_KEY_PREFIX", "open-webui")
+REDIS_KEY_PREFIX = os.environ.get("REDIS_KEY_PREFIX", "open-LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1")
 
 REDIS_SENTINEL_HOSTS = os.environ.get("REDIS_SENTINEL_HOSTS", "")
 REDIS_SENTINEL_PORT = os.environ.get("REDIS_SENTINEL_PORT", "26379")
@@ -380,20 +380,20 @@ except ValueError:
     log.info(f"Invalid UVICORN_WORKERS value, defaulting to {UVICORN_WORKERS}")
 
 ####################################
-# WEBUI_AUTH (Required for security)
+# LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_AUTH (Required for security)
 ####################################
 
-WEBUI_AUTH = os.environ.get("WEBUI_AUTH", "True").lower() == "true"
+LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_AUTH = os.environ.get("LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_AUTH", "True").lower() == "true"
 ENABLE_SIGNUP_PASSWORD_CONFIRMATION = (
     os.environ.get("ENABLE_SIGNUP_PASSWORD_CONFIRMATION", "False").lower() == "true"
 )
 
-WEBUI_AUTH_TRUSTED_EMAIL_HEADER = os.environ.get(
-    "WEBUI_AUTH_TRUSTED_EMAIL_HEADER", None
+LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_AUTH_TRUSTED_EMAIL_HEADER = os.environ.get(
+    "LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_AUTH_TRUSTED_EMAIL_HEADER", None
 )
-WEBUI_AUTH_TRUSTED_NAME_HEADER = os.environ.get("WEBUI_AUTH_TRUSTED_NAME_HEADER", None)
-WEBUI_AUTH_TRUSTED_GROUPS_HEADER = os.environ.get(
-    "WEBUI_AUTH_TRUSTED_GROUPS_HEADER", None
+LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_AUTH_TRUSTED_NAME_HEADER = os.environ.get("LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_AUTH_TRUSTED_NAME_HEADER", None)
+LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_AUTH_TRUSTED_GROUPS_HEADER = os.environ.get(
+    "LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_AUTH_TRUSTED_GROUPS_HEADER", None
 )
 
 
@@ -401,40 +401,40 @@ BYPASS_MODEL_ACCESS_CONTROL = (
     os.environ.get("BYPASS_MODEL_ACCESS_CONTROL", "False").lower() == "true"
 )
 
-WEBUI_AUTH_SIGNOUT_REDIRECT_URL = os.environ.get(
-    "WEBUI_AUTH_SIGNOUT_REDIRECT_URL", None
+LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_AUTH_SIGNOUT_REDIRECT_URL = os.environ.get(
+    "LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_AUTH_SIGNOUT_REDIRECT_URL", None
 )
 
 ####################################
-# WEBUI_SECRET_KEY
+# LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_SECRET_KEY
 ####################################
 
-WEBUI_SECRET_KEY = os.environ.get(
-    "WEBUI_SECRET_KEY",
+LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_SECRET_KEY = os.environ.get(
+    "LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_SECRET_KEY",
     os.environ.get(
-        "WEBUI_JWT_SECRET_KEY", "t0p-s3cr3t"
+        "LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_JWT_SECRET_KEY", "t0p-s3cr3t"
     ),  # DEPRECATED: remove at next major version
 )
 
-WEBUI_SESSION_COOKIE_SAME_SITE = os.environ.get("WEBUI_SESSION_COOKIE_SAME_SITE", "lax")
+LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_SESSION_COOKIE_SAME_SITE = os.environ.get("LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_SESSION_COOKIE_SAME_SITE", "lax")
 
-WEBUI_SESSION_COOKIE_SECURE = (
-    os.environ.get("WEBUI_SESSION_COOKIE_SECURE", "false").lower() == "true"
+LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_SESSION_COOKIE_SECURE = (
+    os.environ.get("LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_SESSION_COOKIE_SECURE", "false").lower() == "true"
 )
 
-WEBUI_AUTH_COOKIE_SAME_SITE = os.environ.get(
-    "WEBUI_AUTH_COOKIE_SAME_SITE", WEBUI_SESSION_COOKIE_SAME_SITE
+LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_AUTH_COOKIE_SAME_SITE = os.environ.get(
+    "LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_AUTH_COOKIE_SAME_SITE", LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_SESSION_COOKIE_SAME_SITE
 )
 
-WEBUI_AUTH_COOKIE_SECURE = (
+LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_AUTH_COOKIE_SECURE = (
     os.environ.get(
-        "WEBUI_AUTH_COOKIE_SECURE",
-        os.environ.get("WEBUI_SESSION_COOKIE_SECURE", "false"),
+        "LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_AUTH_COOKIE_SECURE",
+        os.environ.get("LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_SESSION_COOKIE_SECURE", "false"),
     ).lower()
     == "true"
 )
 
-if WEBUI_AUTH and WEBUI_SECRET_KEY == "":
+if LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_AUTH and LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1_SECRET_KEY == "":
     raise ValueError(ERROR_MESSAGES.ENV_VAR_NOT_FOUND)
 
 ENABLE_COMPRESSION_MIDDLEWARE = (
@@ -704,7 +704,7 @@ OTEL_LOGS_EXPORTER_OTLP_INSECURE = (
     ).lower()
     == "true"
 )
-OTEL_SERVICE_NAME = os.environ.get("OTEL_SERVICE_NAME", "open-webui")
+OTEL_SERVICE_NAME = os.environ.get("OTEL_SERVICE_NAME", "open-LunarnoLunarnogit add .git commit -m "Rebrand to Lunarno"git log --oneline -1")
 OTEL_RESOURCE_ATTRIBUTES = os.environ.get(
     "OTEL_RESOURCE_ATTRIBUTES", ""
 )  # e.g. key1=val1,key2=val2
